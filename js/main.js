@@ -1,5 +1,5 @@
-import { appendPX } from '../js/utils.js';
-import Simulation from '../js/Simulation.js';
+import { appendPX } from './utils.js';
+import Simulation from './Simulation.js';
 
 const WIDTH = 1200;
 const HEIGHT = 650;

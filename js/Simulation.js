@@ -1,4 +1,4 @@
-import { getRandomInt, getDistance } from '../js/utils.js';
+import { getRandomInt, getDistance } from './utils.js';
 import Ball from '../js/Ball.js';
 
 const BALL_SIZE = { MIN: 15, MAX: 30 };
