@@ -1,4 +1,4 @@
-import { getDistance, getRandomColor, appendPX, resolveCollision } from '/js/utils.js';
+import { getDistance, getRandomColor, appendPX, resolveCollision } from '../js/utils.js';
 
 export default class Ball {
   constructor(x, y, radius, parent, parentWidth, parentHeight, balls) {
