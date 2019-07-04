@@ -1,4 +1,4 @@
 # Ball Collision
 Ball collision simulation
 
-Demo: http://dipushrestha.github.io/ball-collision
+Demo: https://dipushrestha.github.io/ball-collision
