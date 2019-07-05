@@ -1,4 +1,4 @@
-import { getDistance, getRandomColor, appendPX, resolveCollision } from './utils.js';
+import { getDistance, getRandomColor, appendPX } from './utils.js';
 
 export default class Ball {
   constructor(x, y, radius, parent, parentWidth, parentHeight, balls) {
@@ -46,7 +46,12 @@ export default class Ball {
       if (this === ball) continue;
 
       let combinedRadius = this.radius + ball.radius;
-      let distanceBetweenBalls = getDistance(this.x, this.y, ball.x, ball.y);
+      let distanceBetweenBalls = getDistance(
+        this.x + this.dx,
+        this.y + this.dy,
+        ball.x + ball.dx,
+        ball.y + ball.dy
+      );
 
       if (distanceBetweenBalls < combinedRadius) {
         let tempX = this.dx;
