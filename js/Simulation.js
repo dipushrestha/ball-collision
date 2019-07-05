@@ -1,7 +1,7 @@
 import { getRandomInt, getDistance } from './utils.js';
 import Ball from '../js/Ball.js';
 
-const BALL_SIZE = { MIN: 15, MAX: 30 };
+const BALL_SIZE = { MIN: 20, MAX: 30 };
 
 export default class Simulation {
   constructor(parent, parentWidth, parentHeight, numberOfBalls, frameRate) {
