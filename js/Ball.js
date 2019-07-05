@@ -8,8 +8,8 @@ export default class Ball {
     this.mass = radius;
     this.radius = radius;
     this.parent = parent;
-    this.dx = (Math.random() - 0.5) * 2;
-    this.dy = (Math.random() - 0.5) * 2;
+    this.dx = (Math.random() - 0.5) * 3;
+    this.dy = (Math.random() - 0.5) * 3;
     this.parentWidth = parentWidth;
     this.parentHeight = parentHeight;
     this.element = null;
@@ -29,12 +29,20 @@ export default class Ball {
     this.x += this.dx;
     this.y += this.dy;
 
-    if (this.x - this.radius <= 0 || this.x + this.radius >= this.parentWidth) {
+    if (this.x - this.radius <= 0) {
       this.dx *= -1;
+      this.x = this.radius;
+    } else if (this.x + this.radius >= this.parentWidth) {
+      this.dx *= -1;
+      this.x = this.parentWidth - this.radius;
     }
 
-    if (this.y - this.radius <= 0 || this.y + this.radius >= this.parentHeight) {
+    if (this.y - this.radius <= 0) {
       this.dy *= -1;
+      this.y = this.radius;
+    } else if (this.y + this.radius >= this.parentHeight) {
+      this.dy *= -1;
+      this.y = this.parentHeight - this.radius;
     }
 
     for (let ball of this.balls) {
