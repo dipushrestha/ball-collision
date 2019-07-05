@@ -26,9 +26,6 @@ export default class Ball {
   }
 
   move() {
-    this.x += this.dx;
-    this.y += this.dy;
-
     if (this.x - this.radius <= 0) {
       this.dx *= -1;
       this.x = this.radius;
@@ -52,10 +49,18 @@ export default class Ball {
       let distanceBetweenBalls = getDistance(this.x, this.y, ball.x, ball.y);
 
       if (distanceBetweenBalls < combinedRadius) {
-        resolveCollision(this, ball);
+        let tempX = this.dx;
+        let tempY = this.dy;
+        this.dx = ball.dx;
+        this.dy = ball.dy;
+        ball.dx = tempX;
+        ball.dy = tempY;
         this.element.style.backgroundColor = getRandomColor();
       }
     }
+
+    this.x += this.dx;
+    this.y += this.dy;
   }
 
   draw() {
