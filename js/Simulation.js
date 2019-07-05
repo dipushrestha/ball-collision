@@ -45,9 +45,14 @@ export default class Simulation {
       this.balls.push(ball);
     }
 
-    this.parent.addEventListener('click', function(e) {
+    this.parent.addEventListener('click', e => {
       if (e.target.className === 'ball') {
         container.removeChild(e.target);
+        let index = -1;
+        for (let i = 0; i < this.balls.length; i++) {
+          if (this.balls[i].element === e.target) index = i;
+        }
+        if (index > -1) this.balls.splice(index, 1);
       }
     });
   }
