@@ -8,8 +8,8 @@ export default class Ball {
     this.mass = radius;
     this.radius = radius;
     this.parent = parent;
-    this.dx = (Math.random() - 0.5) * 3;
-    this.dy = (Math.random() - 0.5) * 3;
+    this.dx = (Math.random() - 0.5) * 2;
+    this.dy = (Math.random() - 0.5) * 2;
     this.parentWidth = parentWidth;
     this.parentHeight = parentHeight;
     this.element = null;
